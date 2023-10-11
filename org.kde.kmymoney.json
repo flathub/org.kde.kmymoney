@@ -123,8 +123,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.sqlite.org/2023/sqlite-autoconf-3430100.tar.gz",
-                            "sha256": "46db2f10f306e163e4571b8974d44cd37078aae04295bbf08b253655df3265f4",
+                            "url": "https://www.sqlite.org/2023/sqlite-autoconf-3430200.tar.gz",
+                            "sha256": "6d422b6f62c4de2ca80d61860e3a3fb693554d2f75bb1aaca743ccc4d6f609f0",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 4877,
