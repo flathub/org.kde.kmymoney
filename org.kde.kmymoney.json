@@ -100,8 +100,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/23.08.3/src/akonadi-23.08.3.tar.xz",
-                    "sha256": "c4209f1240f03ab8f299f2799ea5ac2e6adf80268591851bbbcceb3b46fb3e41",
+                    "url": "https://download.kde.org/stable/release-service/23.08.4/src/akonadi-23.08.4.tar.xz",
+                    "sha256": "63fb0372e935d4cc55af14f2b869f6042ed878813f98e6660204b3bb80ed4936",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 8763,
@@ -123,8 +123,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.sqlite.org/2023/sqlite-autoconf-3440000.tar.gz",
-                            "sha256": "b9cd386e7cd22af6e0d2a0f06d0404951e1bef109e42ea06cc0450e10cd15550",
+                            "url": "https://www.sqlite.org/2023/sqlite-autoconf-3440200.tar.gz",
+                            "sha256": "1c6719a148bc41cf0f2bbbe3926d7ce3f5ca09d878f1246fcc20767b175bb407",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 4877,
@@ -149,8 +149,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/23.08.3/src/kidentitymanagement-23.08.3.tar.xz",
-                    "sha256": "7f3483b82dd701f200297d5e6272e8fbb6df5f83438475b511668324e3aadbdd",
+                    "url": "https://download.kde.org/stable/release-service/23.08.4/src/kidentitymanagement-23.08.4.tar.xz",
+                    "sha256": "92736693685342c724034dd5675df858678f73fc1ed04189a7841e9b2237e89b",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 8763,
@@ -169,8 +169,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://download.kde.org/stable/release-service/23.08.3/src/kpimtextedit-23.08.3.tar.xz",
-                            "sha256": "3c16724fcd0b8f915f7a8a981132838eb930d1e1a9a85fdfcfc78ab3a16204fb",
+                            "url": "https://download.kde.org/stable/release-service/23.08.4/src/kpimtextedit-23.08.4.tar.xz",
+                            "sha256": "da55922ce882c2fed5efca00177fddd6fe503547b8942b22181961e871710de5",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 8763,
