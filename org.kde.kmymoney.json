@@ -2,7 +2,7 @@
     "id": "org.kde.kmymoney",
     "default-branch": "stable",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.6",
+    "runtime-version": "6.7",
     "sdk": "org.kde.Sdk",
     "base": "io.qt.qtwebengine.BaseApp",
     "base-version": "5.15-23.08",
