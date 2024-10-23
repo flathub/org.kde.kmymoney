@@ -70,9 +70,9 @@
             "name": "glibmm",
             "sources": [
                 {
-                    "sha256": "5358742598181e5351d7bf8da072bf93e6dd5f178d27640d4e462bc8f14e152f",
+                    "sha256": "fe02c1e5f5825940d82b56b6ec31a12c06c05c1583cfe62f934d0763e1e542b3",
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.6.tar.xz",
+                    "url": "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.7.tar.xz",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "glibmm",
@@ -100,8 +100,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.5.tar.xz",
-                    "sha256": "705c6d29f4116a29bde4e36cfc1b046c92b6ef8c6dae4eaec85018747e6da5aa",
+                    "url": "https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.6.tar.xz",
+                    "sha256": "b55c46037dbcdabc5cee3b389ea11cc3910adb68ebe883e9477847aa660862e7",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "mm-common",
@@ -201,6 +201,7 @@
                         "type": "anitya",
                         "project-id": 8763,
                         "stable-only": true,
+                        "versions": {"<": "24.08.5"},
                         "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-$version.tar.xz"
                     }
                 }
@@ -250,6 +251,7 @@
                         "type": "anitya",
                         "project-id": 8763,
                         "stable-only": true,
+                        "versions": {"<": "23.08.5"},
                         "url-template": "https://download.kde.org/stable/release-service/$version/src/kidentitymanagement-$version.tar.xz"
                     }
                 }
@@ -270,6 +272,7 @@
                                 "type": "anitya",
                                 "project-id": 8763,
                                 "stable-only": true,
+                                "versions": {"<": "23.08.5"},
                                 "url-template": "https://download.kde.org/stable/release-service/$version/src/kpimtextedit-$version.tar.xz"
                             }
                         }
@@ -289,6 +292,7 @@
                         "type": "anitya",
                         "project-id": 17734,
                         "stable-only": true,
+                        "versions": {"<": "2.8.1"},
                         "url-template": "https://download.kde.org/stable/kdiagram/$version/kdiagram-$version.tar.xz"
                     }
                 }
