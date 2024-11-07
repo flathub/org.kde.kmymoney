@@ -195,13 +195,15 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/23.08.4/src/akonadi-23.08.4.tar.xz",
-                    "sha256": "63fb0372e935d4cc55af14f2b869f6042ed878813f98e6660204b3bb80ed4936",
+                    "url": "https://download.kde.org/stable/release-service/24.08.3/src/akonadi-24.08.3.tar.xz",
+                    "sha256": "953e1c56b8c7756826ee1eeca891ea3a194667b432c1f5f6c4ea00c6a0fc466b",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 8763,
                         "stable-only": true,
-                        "versions": {"<": "24.08.5"},
+                        "versions": {
+                            "<": "24.08.5"
+                        },
                         "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-$version.tar.xz"
                     }
                 }
@@ -251,7 +253,9 @@
                         "type": "anitya",
                         "project-id": 8763,
                         "stable-only": true,
-                        "versions": {"<": "23.08.5"},
+                        "versions": {
+                            "<": "23.08.5"
+                        },
                         "url-template": "https://download.kde.org/stable/release-service/$version/src/kidentitymanagement-$version.tar.xz"
                     }
                 }
@@ -272,7 +276,9 @@
                                 "type": "anitya",
                                 "project-id": 8763,
                                 "stable-only": true,
-                                "versions": {"<": "23.08.5"},
+                                "versions": {
+                                    "<": "23.08.5"
+                                },
                                 "url-template": "https://download.kde.org/stable/release-service/$version/src/kpimtextedit-$version.tar.xz"
                             }
                         }
@@ -292,7 +298,9 @@
                         "type": "anitya",
                         "project-id": 17734,
                         "stable-only": true,
-                        "versions": {"<": "2.8.1"},
+                        "versions": {
+                            "<": "2.8.1"
+                        },
                         "url-template": "https://download.kde.org/stable/kdiagram/$version/kdiagram-$version.tar.xz"
                     }
                 }
