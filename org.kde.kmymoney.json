@@ -2,10 +2,10 @@
     "id": "org.kde.kmymoney",
     "default-branch": "stable",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-23.08",
+    "runtime-version": "5.15-24.08",
     "sdk": "org.kde.Sdk",
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "5.15-23.08",
+    "base-version": "5.15-24.08",
     "command": "kmymoney",
     "rename-icon": "kmymoney",
     "copy-icon": true,
@@ -35,8 +35,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/alkimia/8.1.1/alkimia-8.1.1.tar.xz",
-                    "sha256": "957adc63c0be54dd433e3268a37323be5456e5ab84ece27f73a1616a92db86d5"
+                    "url": "https://download.kde.org/stable/alkimia/8.1.2/alkimia-8.1.2.tar.xz",
+                    "sha256": "cf846ee87b9cc630f58e0bdd23334296810ba3bcc1751fe2f4722161897ee33a"
                 }
             ]
         },
@@ -70,9 +70,9 @@
             "name": "glibmm",
             "sources": [
                 {
-                    "sha256": "fe02c1e5f5825940d82b56b6ec31a12c06c05c1583cfe62f934d0763e1e542b3",
+                    "sha256": "64f11d3b95a24e2a8d4166ecff518730f79ecc27222ef41faf7c7e0340fc9329",
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.7.tar.xz",
+                    "url": "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.8.tar.xz",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "glibmm",
@@ -130,7 +130,7 @@
                         "name": "libxml++",
                         "//": "libxml++ 3+ is not API compatible",
                         "versions": {
-                            "<": "2.92.0"
+                            "<": "2.91.0"
                         },
                         "stable-only": true
                     }
@@ -195,13 +195,15 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/23.08.4/src/akonadi-23.08.4.tar.xz",
-                    "sha256": "63fb0372e935d4cc55af14f2b869f6042ed878813f98e6660204b3bb80ed4936",
+                    "url": "https://download.kde.org/stable/release-service/23.08.5/src/akonadi-23.08.5.tar.xz",
+                    "sha256": "abdbdb28c1084a6ad119d7292175ad31efb4a7898a32cc32a35aa1485d9c4f38",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 8763,
                         "stable-only": true,
-                        "versions": {"<": "24.08.5"},
+                        "versions": {
+                            "<": "24.02.0"
+                        },
                         "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-$version.tar.xz"
                     }
                 }
@@ -245,13 +247,15 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/23.08.4/src/kidentitymanagement-23.08.4.tar.xz",
-                    "sha256": "92736693685342c724034dd5675df858678f73fc1ed04189a7841e9b2237e89b",
+                    "url": "https://download.kde.org/stable/release-service/23.08.5/src/kidentitymanagement-23.08.5.tar.xz",
+                    "sha256": "bcd7f7ef26a24b2d198a7739bdc8b4f3868d42e05355173fbc91a95220d77201",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 8763,
                         "stable-only": true,
-                        "versions": {"<": "23.08.5"},
+                        "versions": {
+                            "<": "24.02.0"
+                        },
                         "url-template": "https://download.kde.org/stable/release-service/$version/src/kidentitymanagement-$version.tar.xz"
                     }
                 }
@@ -266,13 +270,15 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://download.kde.org/stable/release-service/23.08.4/src/kpimtextedit-23.08.4.tar.xz",
-                            "sha256": "da55922ce882c2fed5efca00177fddd6fe503547b8942b22181961e871710de5",
+                            "url": "https://download.kde.org/stable/release-service/23.08.5/src/kpimtextedit-23.08.5.tar.xz",
+                            "sha256": "4edc962b0c8202c192b3c9c6faaba0996e88df99609500abb54f55b768e727c7",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 8763,
                                 "stable-only": true,
-                                "versions": {"<": "23.08.5"},
+                                "versions": {
+                                    "<": "24.02.0"
+                                },
                                 "url-template": "https://download.kde.org/stable/release-service/$version/src/kpimtextedit-$version.tar.xz"
                             }
                         }
@@ -292,7 +298,9 @@
                         "type": "anitya",
                         "project-id": 17734,
                         "stable-only": true,
-                        "versions": {"<": "2.8.1"},
+                        "versions": {
+                            "<": "2.8.1"
+                        },
                         "url-template": "https://download.kde.org/stable/kdiagram/$version/kdiagram-$version.tar.xz"
                     }
                 }
@@ -304,8 +312,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.aquamaniac.de/rdm/attachments/download/499/aqbanking-6.5.4.tar.gz",
-                    "sha256": "0d16ceae76f0718e466638f4547a8b14927f1d8d98322079cd6481adde30ac99"
+                    "url": "https://www.aquamaniac.de/rdm/attachments/download/531/aqbanking-6.6.0.tar.gz",
+                    "sha256": "37634487b95bad72b1b21397bce08cb4b15e13cb253886767c98f31712e40bfb"
                 }
             ],
             "modules": [
@@ -314,8 +322,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/lsh123/xmlsec/archive/refs/tags/xmlsec-1_2_32.tar.gz",
-                            "sha256": "e33e551fb9f6da5576b1a55ce962048adf337332c27e6be9dba04d360b6a5584"
+                            "url": "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.7.tar.gz",
+                            "sha256": "d82e93b69b8aa205a616b62917a269322bf63a3eaafb3775014e61752b2013ea"
                         }
                     ]
                 },
@@ -341,11 +349,58 @@
                     "config-opts": [
                         "--with-guis='qt5'"
                     ],
+                    "build-options": {
+                        "env": {
+                            "GPGRT_CONFIG": "/app/bin/gpgrt-config"
+                        }
+                    },
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.aquamaniac.de/rdm/attachments/download/465/gwenhywfar-5.10.1.tar.gz",
-                            "sha256": "a2f60a9dde5da27e57e0e5ef5f8931f495c1d541ad90a841e2b6231565547160"
+                            "url": "https://www.aquamaniac.de/rdm/attachments/download/529/gwenhywfar-5.12.0.tar.gz",
+                            "sha256": "0ad5f1447703211f1610053a94bce1e82abceda2222a2ecc9cf45b148395d626"
+                        }
+                    ],
+                    "modules": [
+                        {
+                            "name": "libgcrypt",
+                            "config-opts": [
+                                "--disable-static"
+                            ],
+                            "sources": [
+                                {
+                                    "type": "archive",
+                                    "url": "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.11.0.tar.bz2",
+                                    "sha256": "09120c9867ce7f2081d6aaa1775386b98c2f2f246135761aae47d81f58685b9c",
+                                    "x-checker-data": {
+                                        "type": "anitya",
+                                        "project-id": 1623,
+                                        "stable-only": true,
+                                        "url-template": "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-$version.tar.bz2"
+                                    }
+                                }
+                            ],
+                            "modules": [
+                                {
+                                    "name": "libgpg-error",
+                                    "config-opts": [
+                                        "--disable-static"
+                                    ],
+                                    "sources": [
+                                        {
+                                            "type": "archive",
+                                            "url": "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.55.tar.bz2",
+                                            "sha256": "95b178148863f07d45df0cea67e880a79b9ef71f5d230baddc0071128516ef78",
+                                            "x-checker-data": {
+                                                "type": "anitya",
+                                                "project-id": 1628,
+                                                "stable-only": true,
+                                                "url-template": "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-$version.tar.bz2"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -390,6 +445,9 @@
                     "build-options": {
                         "no-debuginfo": true
                     },
+                    "post-install": [
+                        "chmod 755 /app/lib/libtcl*.so"
+                    ],
                     "cleanup": [
                         "*"
                     ],
@@ -424,6 +482,14 @@
                         "stable-only": true,
                         "url-template": "https://download.kde.org/stable/kmymoney/$version/src/kmymoney-$version.tar.xz"
                     }
+                },
+                {
+                    "type": "patch",
+                    "path": "launchable.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "developername.patch"
                 }
             ]
         }
