@@ -67,35 +67,6 @@
             ]
         },
         {
-            "name": "glibmm",
-            "sources": [
-                {
-                    "sha256": "64f11d3b95a24e2a8d4166ecff518730f79ecc27222ef41faf7c7e0340fc9329",
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.8.tar.xz",
-                    "x-checker-data": {
-                        "type": "gnome",
-                        "name": "glibmm",
-                        "versions": {
-                            "<": "2.67"
-                        }
-                    }
-                }
-            ],
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dbuild-examples=false"
-            ],
-            "cleanup": [
-                "*.la",
-                "/include/glibmm-2.4",
-                "/include/giomm-2.4",
-                "/lib/glibmm-2.4",
-                "/lib/giomm-2.4",
-                "/lib/libglibmm_generate_extra_defs*"
-            ]
-        },
-        {
             "name": "libofx",
             "buildsystem": "cmake-ninja",
             "config-opts": [
@@ -179,6 +150,35 @@
                                         "stable-only": true
                                     }
                                 }
+                            ]
+                        },
+                        {
+                            "name": "glibmm",
+                            "buildsystem": "meson",
+                            "config-opts": [
+                                "-Dbuild-examples=false"
+                            ],
+                            "sources": [
+                                {
+                                    "sha256": "64f11d3b95a24e2a8d4166ecff518730f79ecc27222ef41faf7c7e0340fc9329",
+                                    "type": "archive",
+                                    "url": "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.8.tar.xz",
+                                    "x-checker-data": {
+                                        "type": "gnome",
+                                        "name": "glibmm",
+                                        "versions": {
+                                            "<": "2.67"
+                                        }
+                                    }
+                                }
+                            ],
+                            "cleanup": [
+                                "*.la",
+                                "/include/glibmm-2.4",
+                                "/include/giomm-2.4",
+                                "/lib/glibmm-2.4",
+                                "/lib/giomm-2.4",
+                                "/lib/libglibmm_generate_extra_defs*"
                             ]
                         }
                     ]
