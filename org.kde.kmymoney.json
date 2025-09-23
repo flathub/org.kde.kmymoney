@@ -111,33 +111,6 @@
             ]
         },
         {
-            "name": "libxml++-2.6",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dbuild-examples=false",
-                "-Dbuild-tests=false"
-            ],
-            "cleanup": [
-                "/lib/libxml++-2.6"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/libxml++/2.42/libxml++-2.42.3.tar.xz",
-                    "sha256": "74b95302e24dbebc56e97048e86ad0a4121fc82a43e58d381fbe1d380e8eba04",
-                    "x-checker-data": {
-                        "type": "gnome",
-                        "name": "libxml++",
-                        "//": "libxml++ 3+ is not API compatible",
-                        "versions": {
-                            "<": "2.91.0"
-                        },
-                        "stable-only": true
-                    }
-                }
-            ]
-        },
-        {
             "name": "libofx",
             "buildsystem": "cmake-ninja",
             "config-opts": [
@@ -178,6 +151,33 @@
                             "commands": [
                                 "autoreconf -vfi"
                             ]
+                        }
+                    ]
+                },
+                {
+                    "name": "libxml++-2.6",
+                    "buildsystem": "meson",
+                    "config-opts": [
+                        "-Dbuild-examples=false",
+                        "-Dbuild-tests=false"
+                    ],
+                    "cleanup": [
+                        "/lib/libxml++-2.6"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://download.gnome.org/sources/libxml++/2.42/libxml++-2.42.3.tar.xz",
+                            "sha256": "74b95302e24dbebc56e97048e86ad0a4121fc82a43e58d381fbe1d380e8eba04",
+                            "x-checker-data": {
+                                "type": "gnome",
+                                "name": "libxml++",
+                                "//": "libxml++ 3+ is not API compatible",
+                                "versions": {
+                                    "<": "2.91.0"
+                                },
+                                "stable-only": true
+                            }
                         }
                     ]
                 }
