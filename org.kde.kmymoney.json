@@ -176,18 +176,19 @@
                                     "name": "sigc++",
                                     "buildsystem": "meson",
                                     "config-opts": [
+                                        "-Dbuild-tests=false",
                                         "-Dbuild-examples=false"
                                     ],
                                     "sources": [
                                         {
                                             "type": "archive",
-                                            "url": "https://download.gnome.org/sources/libsigc++/2.10/libsigc++-2.10.8.tar.xz",
-                                            "sha256": "235a40bec7346c7b82b6a8caae0456353dc06e71f14bc414bcc858af1838719a",
+                                            "url": "https://download.gnome.org/sources/libsigc++/2.12/libsigc++-2.12.1.tar.xz",
+                                            "sha256": "a9dbee323351d109b7aee074a9cb89ca3e7bcf8ad8edef1851f4cf359bd50843",
                                             "x-checker-data": {
                                                 "type": "gnome",
                                                 "name": "libsigc++",
                                                 "versions": {
-                                                    "<": "2.11"
+                                                    "<": "2.99"
                                                 }
                                             }
                                         }
