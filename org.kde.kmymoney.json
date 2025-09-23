@@ -2,10 +2,8 @@
     "id": "org.kde.kmymoney",
     "default-branch": "stable",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-24.08",
+    "runtime-version": "6.9",
     "sdk": "org.kde.Sdk",
-    "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "5.15-24.08",
     "command": "kmymoney",
     "rename-icon": "kmymoney",
     "copy-icon": true,
@@ -21,9 +19,6 @@
         "/share/info",
         "/share/man"
     ],
-    "cleanup-commands": [
-        "/app/cleanup-BaseApp.sh"
-    ],
     "finish-args": [
         "--share=ipc",
         "--share=network",
@@ -34,13 +29,76 @@
     ],
     "modules": [
         {
-            "name": "alkimia",
-            "buildsystem": "cmake-ninja",
+            "name": "qgpgme",
+            "buildsystem": "autotools",
+            "config-opts": [
+                "--enable-languages=cpp,qt6",
+                "--disable-glibtest",
+                "--disable-gpgconf-test",
+                "--disable-gpg-test",
+                "--disable-gpgsm-test",
+                "--disable-g13-test"
+            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/alkimia/8.1.2/alkimia-8.1.2.tar.xz",
-                    "sha256": "cf846ee87b9cc630f58e0bdd23334296810ba3bcc1751fe2f4722161897ee33a"
+                    "url": "https://gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.3.tar.bz2",
+                    "sha256": "bfc17f5bd1b178c8649fdd918956d277080f33df006a2dc40acdecdce68c50dd",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 1239,
+                        "stable-only": true,
+                        "url-template": "https://gnupg.org/ftp/gcrypt/gpgme/gpgme-$version.tar.bz2",
+                        "versions": {
+                            "<": "2.0.0"
+                        }
+                    }
+                }
+            ],
+            "cleanup": [
+                "/bin"
+            ]
+        },
+        {
+            "name": "qtkeychain",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DBUILD_WITH_QT6=ON",
+                "-DBUILD_TESTING=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/frankosterfeld/qtkeychain/archive/refs/tags/0.15.0.tar.gz",
+                    "sha256": "f4254dc8f0933b06d90672d683eab08ef770acd8336e44dfa030ce041dc2ca22",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 4138,
+                        "stable-only": true,
+                        "url-template": "https://github.com/frankosterfeld/qtkeychain/archive/refs/tags/$version.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "alkimia",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DQT_MAJOR_VERSION=6",
+                "-DBUILD_APPLETS=OFF",
+                "-DBUILD_TESTING=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/alkimia/8.2.1/alkimia-8.2.1.tar.xz",
+                    "sha256": "f921410e180e0a5811e1ee2926954920c6576a72b3b65f53791faa6c85fcb689",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 378759,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/alkimia/$version/alkimia-$version.tar.xz"
+                    }
                 }
             ]
         },
@@ -206,18 +264,18 @@
         {
             "name": "kchart",
             "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF"
+            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/kdiagram/2.8.0/kdiagram-2.8.0.tar.xz",
-                    "sha256": "579dad3bd1ea44b5a20c0f133ebf47622e38960f9c7c8b3a316be30a369f431f",
+                    "url": "https://download.kde.org/stable/kdiagram/3.0.1/kdiagram-3.0.1.tar.xz",
+                    "sha256": "4659b0c2cd9db18143f5abd9c806091c3aab6abc1a956bbf82815ab3d3189c6d",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 17734,
                         "stable-only": true,
-                        "versions": {
-                            "<": "2.8.1"
-                        },
                         "url-template": "https://download.kde.org/stable/kdiagram/$version/kdiagram-$version.tar.xz"
                     }
                 }
@@ -273,7 +331,7 @@
                 {
                     "name": "gwenhywfar",
                     "config-opts": [
-                        "--with-guis='qt5'"
+                        "--with-guis=qt6"
                     ],
                     "build-options": {
                         "env": {
@@ -390,7 +448,7 @@
             "name": "kmymoney",
             "buildsystem": "cmake-ninja",
             "config-opts": [
-                "-DENABLE_WEBENGINE=ON"
+                "-DBUILD_WITH_QT6=ON"
             ],
             "cleanup": [
                 "/share/icons/hicolor/1024x1024"
@@ -399,22 +457,14 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/kmymoney/5.1.3/src/kmymoney-5.1.3.tar.xz",
-                    "sha256": "3938b8078b7391ba32e12bb4239762fae134683a0c2ec1a75105c302ca3e5e3f",
+                    "url": "https://download.kde.org/stable/kmymoney/5.2.1/kmymoney-5.2.1.tar.xz",
+                    "sha256": "feadf40b6d4c90d77e32716a858dd23769081863104d8cea62910b1ec3e4336b",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 8917,
                         "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/kmymoney/$version/src/kmymoney-$version.tar.xz"
+                        "url-template": "https://download.kde.org/stable/kmymoney/$version/kmymoney-$version.tar.xz"
                     }
-                },
-                {
-                    "type": "patch",
-                    "path": "launchable.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "developername.patch"
                 }
             ]
         }
