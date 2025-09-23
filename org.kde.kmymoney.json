@@ -216,6 +216,9 @@
             "modules": [
                 {
                     "name": "xmlsec",
+                    "config-opts": [
+                        "--disable-static"
+                    ],
                     "sources": [
                         {
                             "type": "archive",
@@ -292,6 +295,7 @@
                 "/bin"
             ],
             "config-opts": [
+                "--disable-static",
                 "--enable-tempstore=yes",
                 "--disable-tcl"
             ],
