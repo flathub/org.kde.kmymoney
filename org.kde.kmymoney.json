@@ -205,7 +205,6 @@
         },
         {
             "name": "aqbanking",
-            "no-parallel-make": true,
             "sources": [
                 {
                     "type": "archive",
