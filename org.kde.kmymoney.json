@@ -228,8 +228,23 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.aquamaniac.de/rdm/attachments/download/531/aqbanking-6.6.0.tar.gz",
-                    "sha256": "37634487b95bad72b1b21397bce08cb4b15e13cb253886767c98f31712e40bfb"
+                    "url": "https://github.com/aqbanking/aqbanking/archive/refs/tags/6.6.1.tar.gz",
+                    "sha256": "72ff6d41743b122bb5d4edf7d9f54c66126b7392f1185f7cf50330c9e308e85e",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 6890,
+                        "stable-only": true,
+                        "url-template": "https://github.com/aqbanking/aqbanking/archive/refs/tags/$version.tar.gz"
+                    }
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "make -fMakefile.cvs",
+                        "./configure",
+                        "make typedefs",
+                        "make typefiles"
+                    ]
                 }
             ],
             "modules": [
@@ -268,8 +283,20 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.aquamaniac.de/rdm/attachments/download/529/gwenhywfar-5.12.0.tar.gz",
-                            "sha256": "0ad5f1447703211f1610053a94bce1e82abceda2222a2ecc9cf45b148395d626"
+                            "url": "https://github.com/aqbanking/gwenhywfar/archive/refs/tags/5.12.2.tar.gz",
+                            "sha256": "64e044f41a4ea59d3c5a7afe77ed8fed3ee850277f9310183bb5fcb0b2329633",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 6891,
+                                "stable-only": true,
+                                "url-template": "https://github.com/aqbanking/gwenhywfar/archive/refs/tags/$version.tar.gz"
+                            }
+                        },
+                        {
+                            "type": "shell",
+                            "commands": [
+                                "make -fMakefile.cvs"
+                            ]
                         }
                     ],
                     "cleanup": [
