@@ -328,23 +328,6 @@
                     ]
                 },
                 {
-                    "name": "libpcsclite",
-                    "config-opts": [
-                        "--disable-libsystemd",
-                        "--disable-serial",
-                        "--disable-usb",
-                        "--disable-libudev",
-                        "--with-systemdsystemunitdir=no"
-                    ],
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://pcsclite.apdu.fr/files/pcsc-lite-1.8.24.tar.bz2",
-                            "sha256": "b81864fa6a5ec776639c02ae89998955f7702a8d10e8b8f70023c5a599d97568"
-                        }
-                    ]
-                },
-                {
                     "name": "gwenhywfar",
                     "config-opts": [
                         "--with-guis='qt5'"
@@ -401,16 +384,6 @@
                                     ]
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "name": "libchipcard",
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://aquamaniac.de/rdm/attachments/download/382/libchipcard-5.1.6.tar.gz",
-                            "sha256": "6c07f527417f7562074f99012da4d11eb4dbafd33f49e66b442ccd6e3b8cfd20"
                         }
                     ]
                 }
