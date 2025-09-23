@@ -410,28 +410,6 @@
                     "commit": "4a81bea61e1da6fec222d713852830f1fd01aed2",
                     "disable-fsckobjects": true
                 }
-            ],
-            "modules": [
-                {
-                    "name": "tcl",
-                    "subdir": "unix",
-                    "build-options": {
-                        "no-debuginfo": true
-                    },
-                    "post-install": [
-                        "chmod 755 /app/lib/libtcl*.so"
-                    ],
-                    "cleanup": [
-                        "*"
-                    ],
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.10/tcl8.6.10-src.tar.gz",
-                            "sha256": "5196dbf6638e3df8d5c87b5815c8c2b758496eb6f0e41446596c9a4e638d87ed"
-                        }
-                    ]
-                }
             ]
         },
         {
