@@ -41,32 +41,6 @@
             ]
         },
         {
-            "name": "sigc++",
-            "sources": [
-                {
-                    "sha256": "235a40bec7346c7b82b6a8caae0456353dc06e71f14bc414bcc858af1838719a",
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/libsigc++/2.10/libsigc++-2.10.8.tar.xz",
-                    "x-checker-data": {
-                        "type": "gnome",
-                        "name": "libsigc++",
-                        "versions": {
-                            "<": "2.11"
-                        }
-                    }
-                }
-            ],
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dbuild-examples=false"
-            ],
-            "cleanup": [
-                "*.la",
-                "/include/sigc++-2.0",
-                "/lib/sigc++-2.0"
-            ]
-        },
-        {
             "name": "libofx",
             "buildsystem": "cmake-ninja",
             "config-opts": [
@@ -179,6 +153,34 @@
                                 "/lib/glibmm-2.4",
                                 "/lib/giomm-2.4",
                                 "/lib/libglibmm_generate_extra_defs*"
+                            ],
+                            "modules": [
+                                {
+                                    "name": "sigc++",
+                                    "buildsystem": "meson",
+                                    "config-opts": [
+                                        "-Dbuild-examples=false"
+                                    ],
+                                    "sources": [
+                                        {
+                                            "type": "archive",
+                                            "url": "https://download.gnome.org/sources/libsigc++/2.10/libsigc++-2.10.8.tar.xz",
+                                            "sha256": "235a40bec7346c7b82b6a8caae0456353dc06e71f14bc414bcc858af1838719a",
+                                            "x-checker-data": {
+                                                "type": "gnome",
+                                                "name": "libsigc++",
+                                                "versions": {
+                                                    "<": "2.11"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "cleanup": [
+                                        "*.la",
+                                        "/include/sigc++-2.0",
+                                        "/lib/sigc++-2.0"
+                                    ]
+                                }
                             ]
                         }
                     ]
