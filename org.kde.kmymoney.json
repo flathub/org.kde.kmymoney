@@ -465,6 +465,10 @@
                         "stable-only": true,
                         "url-template": "https://download.kde.org/stable/kmymoney/$version/kmymoney-$version.tar.xz"
                     }
+                },
+                {
+                    "type": "patch",
+                    "path": "releases.patch"
                 }
             ]
         }
