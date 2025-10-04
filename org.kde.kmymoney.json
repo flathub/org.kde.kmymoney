@@ -2,137 +2,102 @@
     "id": "org.kde.kmymoney",
     "default-branch": "stable",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-24.08",
+    "runtime-version": "6.9",
     "sdk": "org.kde.Sdk",
-    "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "5.15-24.08",
     "command": "kmymoney",
     "rename-icon": "kmymoney",
     "copy-icon": true,
     "cleanup": [
+        "*.a",
+        "*.la",
         "/include",
+        "/lib/cmake",
         "/lib/pkgconfig",
-        "/lib/*.a",
-        "/lib/*.la",
+        "/mkspecs",
+        "/share/aclocal",
+        "/share/doc",
+        "/share/info",
         "/share/man"
-    ],
-    "cleanup-commands": [
-        "/app/cleanup-BaseApp.sh"
     ],
     "finish-args": [
         "--share=ipc",
         "--share=network",
         "--socket=wayland",
         "--socket=fallback-x11",
-        "--socket=pulseaudio",
         "--device=dri",
         "--system-talk-name=org.freedesktop.UDisks2"
     ],
     "modules": [
         {
+            "name": "qgpgme",
+            "buildsystem": "autotools",
+            "config-opts": [
+                "--enable-languages=cpp,qt6",
+                "--disable-glibtest",
+                "--disable-gpgconf-test",
+                "--disable-gpg-test",
+                "--disable-gpgsm-test",
+                "--disable-g13-test"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.3.tar.bz2",
+                    "sha256": "bfc17f5bd1b178c8649fdd918956d277080f33df006a2dc40acdecdce68c50dd",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 1239,
+                        "stable-only": true,
+                        "url-template": "https://gnupg.org/ftp/gcrypt/gpgme/gpgme-$version.tar.bz2",
+                        "versions": {
+                            "<": "2.0.0"
+                        }
+                    }
+                }
+            ],
+            "cleanup": [
+                "/bin"
+            ]
+        },
+        {
+            "name": "qtkeychain",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DBUILD_WITH_QT6=ON",
+                "-DBUILD_TESTING=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/frankosterfeld/qtkeychain/archive/refs/tags/0.15.0.tar.gz",
+                    "sha256": "f4254dc8f0933b06d90672d683eab08ef770acd8336e44dfa030ce041dc2ca22",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 4138,
+                        "stable-only": true,
+                        "url-template": "https://github.com/frankosterfeld/qtkeychain/archive/refs/tags/$version.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
             "name": "alkimia",
             "buildsystem": "cmake-ninja",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/alkimia/8.1.2/alkimia-8.1.2.tar.xz",
-                    "sha256": "cf846ee87b9cc630f58e0bdd23334296810ba3bcc1751fe2f4722161897ee33a"
-                }
-            ]
-        },
-        {
-            "name": "sigc++",
-            "sources": [
-                {
-                    "sha256": "235a40bec7346c7b82b6a8caae0456353dc06e71f14bc414bcc858af1838719a",
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/libsigc++/2.10/libsigc++-2.10.8.tar.xz",
-                    "x-checker-data": {
-                        "type": "gnome",
-                        "name": "libsigc++",
-                        "versions": {
-                            "<": "2.11"
-                        }
-                    }
-                }
-            ],
-            "buildsystem": "meson",
             "config-opts": [
-                "-Dbuild-examples=false"
-            ],
-            "cleanup": [
-                "*.la",
-                "/include/sigc++-2.0",
-                "/lib/sigc++-2.0"
-            ]
-        },
-        {
-            "name": "glibmm",
-            "sources": [
-                {
-                    "sha256": "64f11d3b95a24e2a8d4166ecff518730f79ecc27222ef41faf7c7e0340fc9329",
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.8.tar.xz",
-                    "x-checker-data": {
-                        "type": "gnome",
-                        "name": "glibmm",
-                        "versions": {
-                            "<": "2.67"
-                        }
-                    }
-                }
-            ],
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dbuild-examples=false"
-            ],
-            "cleanup": [
-                "*.la",
-                "/include/glibmm-2.4",
-                "/include/giomm-2.4",
-                "/lib/glibmm-2.4",
-                "/lib/giomm-2.4",
-                "/lib/libglibmm_generate_extra_defs*"
-            ]
-        },
-        {
-            "name": "mm-common",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.7.tar.xz",
-                    "sha256": "494abfce781418259b1e9d8888c73af4de4b6f3be36cc75d9baa8baa0f2a7a39",
-                    "x-checker-data": {
-                        "type": "gnome",
-                        "name": "mm-common",
-                        "stable-only": true
-                    }
-                }
-            ]
-        },
-        {
-            "name": "libxml++-2.6",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dbuild-examples=false",
-                "-Dbuild-tests=false"
-            ],
-            "cleanup": [
-                "/lib/libxml++-2.6"
+                "-DQT_MAJOR_VERSION=6",
+                "-DBUILD_APPLETS=OFF",
+                "-DBUILD_TESTING=OFF"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libxml++/2.42/libxml++-2.42.3.tar.xz",
-                    "sha256": "74b95302e24dbebc56e97048e86ad0a4121fc82a43e58d381fbe1d380e8eba04",
+                    "url": "https://download.kde.org/stable/alkimia/8.2.1/alkimia-8.2.1.tar.xz",
+                    "sha256": "f921410e180e0a5811e1ee2926954920c6576a72b3b65f53791faa6c85fcb689",
                     "x-checker-data": {
-                        "type": "gnome",
-                        "name": "libxml++",
-                        "//": "libxml++ 3+ is not API compatible",
-                        "versions": {
-                            "<": "2.91.0"
-                        },
-                        "stable-only": true
+                        "type": "anitya",
+                        "project-id": 378759,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/alkimia/$version/alkimia-$version.tar.xz"
                     }
                 }
             ]
@@ -140,15 +105,21 @@
         {
             "name": "libofx",
             "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DBUILD_SHARED_LIBS=ON"
-            ],
             "sources": [
                 {
                     "type": "archive",
                     "url": "https://github.com/libofx/libofx/releases/download/0.10.9/libofx-0.10.9.tar.gz",
-                    "sha256": "1ca89ff7d681c9edad312172ac464231a8de686e653213612f9417492cef0d37"
+                    "sha256": "1ca89ff7d681c9edad312172ac464231a8de686e653213612f9417492cef0d37",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 7309,
+                        "stable-only": true,
+                        "url-template": "https://github.com/libofx/libofx/releases/download/0.10.9/libofx-$version.tar.gz"
+                    }
                 }
+            ],
+            "cleanup": [
+                "/bin"
             ],
             "modules": [
                 {
@@ -162,8 +133,14 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "http://sourceforge.net/projects/openjade/files/opensp/1.5.2/OpenSP-1.5.2.tar.gz",
-                            "sha256": "57f4898498a368918b0d49c826aa434bb5b703d2c3b169beb348016ab25617ce"
+                            "url": "https://sourceforge.net/projects/openjade/files/opensp/1.5.2/OpenSP-1.5.2.tar.gz",
+                            "sha256": "57f4898498a368918b0d49c826aa434bb5b703d2c3b169beb348016ab25617ce",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 377818,
+                                "stable-only": true,
+                                "url-template": "https://sourceforge.net/projects/openjade/files/opensp/$version/OpenSP-$version.tar.gz"
+                            }
                         },
                         {
                             "type": "shell",
@@ -179,108 +156,106 @@
                                 "autoreconf -vfi"
                             ]
                         }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "akonadi",
-            "config-opts": [
-                "-DBUILD_TESTING=OFF",
-                "-DBUILD_TOOLS=OFF",
-                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-                "-DDATABASE_BACKEND=SQLITE"
-            ],
-            "buildsystem": "cmake-ninja",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/23.08.5/src/akonadi-23.08.5.tar.xz",
-                    "sha256": "abdbdb28c1084a6ad119d7292175ad31efb4a7898a32cc32a35aa1485d9c4f38",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "versions": {
-                            "<": "24.02.0"
-                        },
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-$version.tar.xz"
-                    }
-                }
-            ],
-            "modules": [
-                {
-                    "name": "sqlite3",
-                    "config-opts": [
-                        "--enable-threadsafe",
-                        "--enable-threads-override-locks"
                     ],
-                    "build-options": {
-                        "cflags": "-DSQLITE_ENABLE_UNLOCK_NOTIFY=1"
-                    },
+                    "cleanup": [
+                        "/bin"
+                    ]
+                },
+                {
+                    "name": "libxml++-2.6",
+                    "buildsystem": "meson",
+                    "config-opts": [
+                        "-Dbuild-examples=false",
+                        "-Dbuild-tests=false"
+                    ],
+                    "cleanup": [
+                        "/bin",
+                        "/lib/libxml++-2.6"
+                    ],
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.sqlite.org/2023/sqlite-autoconf-3440200.tar.gz",
-                            "sha256": "1c6719a148bc41cf0f2bbbe3926d7ce3f5ca09d878f1246fcc20767b175bb407",
+                            "url": "https://download.gnome.org/sources/libxml++/2.42/libxml++-2.42.3.tar.xz",
+                            "sha256": "74b95302e24dbebc56e97048e86ad0a4121fc82a43e58d381fbe1d380e8eba04",
                             "x-checker-data": {
-                                "type": "anitya",
-                                "project-id": 4877,
-                                "stable-only": true,
-                                "url-template": "https://www.sqlite.org/2023/sqlite-autoconf-${major}${minor}0${patch}00.tar.gz"
+                                "type": "gnome",
+                                "name": "libxml++",
+                                "//": "libxml++ 3+ is not API compatible",
+                                "versions": {
+                                    "<": "2.91.0"
+                                },
+                                "stable-only": true
                             }
                         }
                     ],
-                    "cleanup": [
-                        "/bin/sqlite3",
-                        "*.a"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "kidentitymanagement",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DBUILD_TESTING=OFF"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/23.08.5/src/kidentitymanagement-23.08.5.tar.xz",
-                    "sha256": "bcd7f7ef26a24b2d198a7739bdc8b4f3868d42e05355173fbc91a95220d77201",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "versions": {
-                            "<": "24.02.0"
-                        },
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kidentitymanagement-$version.tar.xz"
-                    }
-                }
-            ],
-            "modules": [
-                {
-                    "name": "kpimtextedit",
-                    "config-opts": [
-                        "-DBUILD_TESTING=OFF"
-                    ],
-                    "buildsystem": "cmake-ninja",
-                    "sources": [
+                    "modules": [
                         {
-                            "type": "archive",
-                            "url": "https://download.kde.org/stable/release-service/23.08.5/src/kpimtextedit-23.08.5.tar.xz",
-                            "sha256": "4edc962b0c8202c192b3c9c6faaba0996e88df99609500abb54f55b768e727c7",
-                            "x-checker-data": {
-                                "type": "anitya",
-                                "project-id": 8763,
-                                "stable-only": true,
-                                "versions": {
-                                    "<": "24.02.0"
-                                },
-                                "url-template": "https://download.kde.org/stable/release-service/$version/src/kpimtextedit-$version.tar.xz"
-                            }
+                            "name": "mm-common",
+                            "sources": [
+                                {
+                                    "type": "archive",
+                                    "url": "https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.7.tar.xz",
+                                    "sha256": "494abfce781418259b1e9d8888c73af4de4b6f3be36cc75d9baa8baa0f2a7a39",
+                                    "x-checker-data": {
+                                        "type": "gnome",
+                                        "name": "mm-common",
+                                        "stable-only": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "glibmm",
+                            "buildsystem": "meson",
+                            "config-opts": [
+                                "-Dbuild-examples=false"
+                            ],
+                            "sources": [
+                                {
+                                    "sha256": "64f11d3b95a24e2a8d4166ecff518730f79ecc27222ef41faf7c7e0340fc9329",
+                                    "type": "archive",
+                                    "url": "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.8.tar.xz",
+                                    "x-checker-data": {
+                                        "type": "gnome",
+                                        "name": "glibmm",
+                                        "versions": {
+                                            "<": "2.67"
+                                        }
+                                    }
+                                }
+                            ],
+                            "cleanup": [
+                                "/lib/glibmm-2.4",
+                                "/lib/giomm-2.4",
+                                "/lib/libglibmm_generate_extra_defs*"
+                            ],
+                            "modules": [
+                                {
+                                    "name": "sigc++",
+                                    "buildsystem": "meson",
+                                    "config-opts": [
+                                        "-Dbuild-tests=false",
+                                        "-Dbuild-examples=false"
+                                    ],
+                                    "sources": [
+                                        {
+                                            "type": "archive",
+                                            "url": "https://download.gnome.org/sources/libsigc++/2.12/libsigc++-2.12.1.tar.xz",
+                                            "sha256": "a9dbee323351d109b7aee074a9cb89ca3e7bcf8ad8edef1851f4cf359bd50843",
+                                            "x-checker-data": {
+                                                "type": "gnome",
+                                                "name": "libsigc++",
+                                                "versions": {
+                                                    "<": "2.99"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "cleanup": [
+                                        "/lib/sigc++-2.0"
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
@@ -289,18 +264,18 @@
         {
             "name": "kchart",
             "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF"
+            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/kdiagram/2.8.0/kdiagram-2.8.0.tar.xz",
-                    "sha256": "579dad3bd1ea44b5a20c0f133ebf47622e38960f9c7c8b3a316be30a369f431f",
+                    "url": "https://download.kde.org/stable/kdiagram/3.0.1/kdiagram-3.0.1.tar.xz",
+                    "sha256": "4659b0c2cd9db18143f5abd9c806091c3aab6abc1a956bbf82815ab3d3189c6d",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 17734,
                         "stable-only": true,
-                        "versions": {
-                            "<": "2.8.1"
-                        },
                         "url-template": "https://download.kde.org/stable/kdiagram/$version/kdiagram-$version.tar.xz"
                     }
                 }
@@ -308,46 +283,55 @@
         },
         {
             "name": "aqbanking",
-            "no-parallel-make": true,
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.aquamaniac.de/rdm/attachments/download/531/aqbanking-6.6.0.tar.gz",
-                    "sha256": "37634487b95bad72b1b21397bce08cb4b15e13cb253886767c98f31712e40bfb"
+                    "url": "https://github.com/aqbanking/aqbanking/archive/refs/tags/6.6.3.tar.gz",
+                    "sha256": "32e2f50d0266048eb84f5400417d0b545c5423b31e1934cb22ad6085f26c96e9",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 6890,
+                        "stable-only": true,
+                        "url-template": "https://github.com/aqbanking/aqbanking/archive/refs/tags/$version.tar.gz"
+                    }
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "make -fMakefile.cvs",
+                        "./configure",
+                        "make typedefs",
+                        "make typefiles"
+                    ]
                 }
             ],
             "modules": [
                 {
                     "name": "xmlsec",
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.7.tar.gz",
-                            "sha256": "d82e93b69b8aa205a616b62917a269322bf63a3eaafb3775014e61752b2013ea"
-                        }
-                    ]
-                },
-                {
-                    "name": "libpcsclite",
                     "config-opts": [
-                        "--disable-libsystemd",
-                        "--disable-serial",
-                        "--disable-usb",
-                        "--disable-libudev",
-                        "--with-systemdsystemunitdir=no"
+                        "--disable-static"
                     ],
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://pcsclite.apdu.fr/files/pcsc-lite-1.8.24.tar.bz2",
-                            "sha256": "b81864fa6a5ec776639c02ae89998955f7702a8d10e8b8f70023c5a599d97568"
+                            "url": "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.7.tar.gz",
+                            "sha256": "d82e93b69b8aa205a616b62917a269322bf63a3eaafb3775014e61752b2013ea",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 5200,
+                                "stable-only": true,
+                                "url-template": "https://www.aleksey.com/xmlsec/download/xmlsec1-$version.tar.gz"
+                            }
                         }
+                    ],
+                    "cleanup": [
+                        "/bin"
                     ]
                 },
                 {
                     "name": "gwenhywfar",
                     "config-opts": [
-                        "--with-guis='qt5'"
+                        "--with-guis=qt6"
                     ],
                     "build-options": {
                         "env": {
@@ -357,9 +341,24 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.aquamaniac.de/rdm/attachments/download/529/gwenhywfar-5.12.0.tar.gz",
-                            "sha256": "0ad5f1447703211f1610053a94bce1e82abceda2222a2ecc9cf45b148395d626"
+                            "url": "https://github.com/aqbanking/gwenhywfar/archive/refs/tags/5.12.2.tar.gz",
+                            "sha256": "64e044f41a4ea59d3c5a7afe77ed8fed3ee850277f9310183bb5fcb0b2329633",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 6891,
+                                "stable-only": true,
+                                "url-template": "https://github.com/aqbanking/gwenhywfar/archive/refs/tags/$version.tar.gz"
+                            }
+                        },
+                        {
+                            "type": "shell",
+                            "commands": [
+                                "make -fMakefile.cvs"
+                            ]
                         }
+                    ],
+                    "cleanup": [
+                        "/bin"
                     ],
                     "modules": [
                         {
@@ -380,6 +379,9 @@
                                     }
                                 }
                             ],
+                            "cleanup": [
+                                "/bin"
+                            ],
                             "modules": [
                                 {
                                     "name": "libgpg-error",
@@ -398,19 +400,14 @@
                                                 "url-template": "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-$version.tar.bz2"
                                             }
                                         }
+                                    ],
+                                    "cleanup": [
+                                        "/bin",
+                                        "/share/common-lisp",
+                                        "/share/libgpg-error"
                                     ]
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "name": "libchipcard",
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://aquamaniac.de/rdm/attachments/download/382/libchipcard-5.1.6.tar.gz",
-                            "sha256": "6c07f527417f7562074f99012da4d11eb4dbafd33f49e66b442ccd6e3b8cfd20"
                         }
                     ]
                 }
@@ -422,6 +419,7 @@
                 "/bin"
             ],
             "config-opts": [
+                "--disable-static",
                 "--enable-tempstore=yes",
                 "--disable-tcl"
             ],
@@ -431,33 +429,18 @@
             },
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/sqlcipher/sqlcipher",
-                    "tag": "v4.4.0",
-                    "commit": "4a81bea61e1da6fec222d713852830f1fd01aed2",
-                    "disable-fsckobjects": true
-                }
-            ],
-            "modules": [
-                {
-                    "name": "tcl",
-                    "subdir": "unix",
-                    "build-options": {
-                        "no-debuginfo": true
-                    },
-                    "post-install": [
-                        "chmod 755 /app/lib/libtcl*.so"
-                    ],
-                    "cleanup": [
-                        "*"
-                    ],
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.10/tcl8.6.10-src.tar.gz",
-                            "sha256": "5196dbf6638e3df8d5c87b5815c8c2b758496eb6f0e41446596c9a4e638d87ed"
+                    "type": "archive",
+                    "url": "https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v4.6.1.tar.gz",
+                    "sha256": "d8f9afcbc2f4b55e316ca4ada4425daf3d0b4aab25f45e11a802ae422b9f53a3",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 11213,
+                        "stable-only": true,
+                        "url-template": "https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v$version.tar.gz",
+                        "versions": {
+                            "<": "4.7"
                         }
-                    ]
+                    }
                 }
             ]
         },
@@ -465,7 +448,7 @@
             "name": "kmymoney",
             "buildsystem": "cmake-ninja",
             "config-opts": [
-                "-DENABLE_WEBENGINE=ON"
+                "-DBUILD_WITH_QT6=ON"
             ],
             "cleanup": [
                 "/share/icons/hicolor/1024x1024"
@@ -474,22 +457,18 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/kmymoney/5.1.3/src/kmymoney-5.1.3.tar.xz",
-                    "sha256": "3938b8078b7391ba32e12bb4239762fae134683a0c2ec1a75105c302ca3e5e3f",
+                    "url": "https://download.kde.org/stable/kmymoney/5.2.1/kmymoney-5.2.1.tar.xz",
+                    "sha256": "feadf40b6d4c90d77e32716a858dd23769081863104d8cea62910b1ec3e4336b",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 8917,
                         "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/kmymoney/$version/src/kmymoney-$version.tar.xz"
+                        "url-template": "https://download.kde.org/stable/kmymoney/$version/kmymoney-$version.tar.xz"
                     }
                 },
                 {
                     "type": "patch",
-                    "path": "launchable.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "developername.patch"
+                    "path": "releases.patch"
                 }
             ]
         }
