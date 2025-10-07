@@ -341,8 +341,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/aqbanking/gwenhywfar/archive/refs/tags/5.12.2.tar.gz",
-                            "sha256": "64e044f41a4ea59d3c5a7afe77ed8fed3ee850277f9310183bb5fcb0b2329633",
+                            "url": "https://github.com/aqbanking/gwenhywfar/archive/refs/tags/5.13.0.tar.gz",
+                            "sha256": "2c3564e7a327c483a69a85b9d563f0408fb32c21765a9c992a04a892ac05dab5",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 6891,
