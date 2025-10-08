@@ -25,6 +25,7 @@
         "--socket=wayland",
         "--socket=fallback-x11",
         "--device=dri",
+        "--filesystem=home",
         "--system-talk-name=org.freedesktop.UDisks2"
     ],
     "modules": [
