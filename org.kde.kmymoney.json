@@ -505,7 +505,10 @@
                 },
                 {
                     "type": "patch",
-                    "path": "releases.patch"
+                    "paths": [
+                        "releases.patch",
+                        "QtSqlPrivate.patch"
+                    ]
                 }
             ]
         }
