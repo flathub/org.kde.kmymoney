@@ -357,7 +357,8 @@
                         {
                             "type": "shell",
                             "commands": [
-                                "make -fMakefile.cvs"
+                                "if test ! -f i18nsources; then echo > i18nsources; fi",
+                                "autoreconf -fi -I ./m4 -I /usr/share/gettext/m4"
                             ]
                         }
                     ],
