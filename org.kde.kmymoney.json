@@ -7,6 +7,10 @@
     "command": "kmymoney",
     "rename-icon": "kmymoney",
     "copy-icon": true,
+    "rename-mime-file": "x-kmymoney.xml",
+    "rename-mime-icons": [
+        "application-x-kmymoney"
+    ],
     "cleanup": [
         "*.a",
         "*.la",
