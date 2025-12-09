@@ -291,8 +291,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/aqbanking/aqbanking/archive/refs/tags/6.6.4.tar.gz",
-                    "sha256": "db32f8525087ac103f2ef0837a7d83e0720c133a57d8bf6b2d72b07a1f98a026",
+                    "url": "https://github.com/aqbanking/aqbanking/archive/refs/tags/6.8.2.tar.gz",
+                    "sha256": "454df2550fc75ba7d84171ba4c43c72601045db73d0c7207e878f8fb0b7f9813",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 6890,
@@ -346,8 +346,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/aqbanking/gwenhywfar/archive/refs/tags/5.13.0.tar.gz",
-                            "sha256": "2c3564e7a327c483a69a85b9d563f0408fb32c21765a9c992a04a892ac05dab5",
+                            "url": "https://github.com/aqbanking/gwenhywfar/archive/refs/tags/5.14.1.tar.gz",
+                            "sha256": "d52937b56e0760d11dc200ad5fb2cfd9d8bf147d0b1b97451f23f31c6ee641a2",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 6891,
