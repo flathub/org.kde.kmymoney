@@ -420,6 +420,8 @@
             ]
         },
         {
+            "name": "libchipcard",
+            "buildsystem": "autotools",
             "sources": [
                 {
                     "type": "git",
