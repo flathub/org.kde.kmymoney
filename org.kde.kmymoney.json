@@ -28,6 +28,7 @@
         "--share=network",
         "--socket=wayland",
         "--socket=fallback-x11",
+        "--socket=pcsc",
         "--device=dri",
         "--filesystem=home",
         "--system-talk-name=org.freedesktop.UDisks2"
@@ -413,6 +414,62 @@
                                     ]
                                 }
                             ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "libchipcard",
+            "buildsystem": "autotools",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://git.aquamaniac.de/git/libchipcard",
+                    "commit": "49062eb5ff54e8eddf4840969066178fe666c379",
+                    "tag": "5.1.6",
+                    "x-checker-data": {
+                        "type": "git"
+                    }
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "make -fMakefile.cvs"
+                    ]
+                }
+            ],
+            "cleanup": [
+                "/bin"
+            ],
+            "modules": [
+                {
+                    "name": "pcsc-lite",
+                    "buildsystem": "meson",
+                    "config-opts": [
+                        "-Dlibudev=false",
+                        "-Dlibsystemd=false",
+                        "-Dpolkit=false"
+                    ],
+                    "cleanup": [
+                        "/lib/libpcscspy.so",
+                        "/lib/libpcsclite.so",
+                        "/sbin"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://pcsclite.apdu.fr/files/pcsc-lite-2.4.0.tar.xz",
+                            "sha256": "22307017a99e123dbecb991136783beca07966f1376d74d9ad0004ba5f81c4f1",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 2611,
+                                "url-template": "https://pcsclite.apdu.fr/files/pcsc-lite-$version.tar.xz"
+                            }
+                        },
+                        {
+                            "type": "patch",
+                            "path": "pcsc-lite-negotiate_protocol.diff"
                         }
                     ]
                 }
