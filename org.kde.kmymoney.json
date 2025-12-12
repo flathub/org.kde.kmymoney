@@ -420,13 +420,21 @@
             ]
         },
         {
-            "name": "libchipcard",
-            "buildsystem": "autotools",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://www.aquamaniac.de/rdm/attachments/download/382/libchipcard-5.1.6.tar.gz",
-                    "sha256": "6c07f527417f7562074f99012da4d11eb4dbafd33f49e66b442ccd6e3b8cfd20"
+                    "type": "git",
+                    "url": "https://git.aquamaniac.de/git/libchipcard",
+                    "commit": "49062eb5ff54e8eddf4840969066178fe666c379",
+                    "tag": "5.1.6",
+                    "x-checker-data": {
+                        "type": "git"
+                    }
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "make -fMakefile.cvs"
+                    ]
                 }
             ],
             "cleanup": [
