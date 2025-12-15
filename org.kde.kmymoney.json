@@ -291,8 +291,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/aqbanking/aqbanking/archive/refs/tags/6.8.2.tar.gz",
-                    "sha256": "454df2550fc75ba7d84171ba4c43c72601045db73d0c7207e878f8fb0b7f9813",
+                    "url": "https://github.com/aqbanking/aqbanking/archive/refs/tags/6.8.3.tar.gz",
+                    "sha256": "683e3685f159a715a41aa275ceab1b3c6a33f4456aeebbe80856dad845a2f9c5",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 6890,
@@ -397,8 +397,8 @@
                                     "sources": [
                                         {
                                             "type": "archive",
-                                            "url": "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.57.tar.bz2",
-                                            "sha256": "ab807c81fbd2b8e1d6e3377383be802147c08818f87a82e87f85e5939c939def",
+                                            "url": "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.58.tar.bz2",
+                                            "sha256": "f943aea9a830a8bd938e5124b579efaece24a3225ff4c3d27611a80ce1260c27",
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 1628,
