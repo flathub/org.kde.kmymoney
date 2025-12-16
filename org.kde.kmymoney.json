@@ -51,6 +51,7 @@
                     "url": "https://gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.3.tar.bz2",
                     "sha256": "bfc17f5bd1b178c8649fdd918956d277080f33df006a2dc40acdecdce68c50dd",
                     "x-checker-data": {
+                        "is-important": true,
                         "type": "anitya",
                         "project-id": 1239,
                         "stable-only": true,
@@ -78,6 +79,7 @@
                     "url": "https://github.com/frankosterfeld/qtkeychain/archive/refs/tags/0.15.0.tar.gz",
                     "sha256": "f4254dc8f0933b06d90672d683eab08ef770acd8336e44dfa030ce041dc2ca22",
                     "x-checker-data": {
+                        "is-important": true,
                         "type": "anitya",
                         "project-id": 4138,
                         "stable-only": true,
@@ -100,6 +102,7 @@
                     "url": "https://download.kde.org/stable/alkimia/8.2.1/alkimia-8.2.1.tar.xz",
                     "sha256": "f921410e180e0a5811e1ee2926954920c6576a72b3b65f53791faa6c85fcb689",
                     "x-checker-data": {
+                        "is-important": true,
                         "type": "anitya",
                         "project-id": 378759,
                         "stable-only": true,
@@ -117,6 +120,7 @@
                     "url": "https://github.com/libofx/libofx/releases/download/0.10.9/libofx-0.10.9.tar.gz",
                     "sha256": "1ca89ff7d681c9edad312172ac464231a8de686e653213612f9417492cef0d37",
                     "x-checker-data": {
+                        "is-important": true,
                         "type": "anitya",
                         "project-id": 7309,
                         "stable-only": true,
@@ -278,6 +282,7 @@
                     "url": "https://download.kde.org/stable/kdiagram/3.0.1/kdiagram-3.0.1.tar.xz",
                     "sha256": "4659b0c2cd9db18143f5abd9c806091c3aab6abc1a956bbf82815ab3d3189c6d",
                     "x-checker-data": {
+                        "is-important": true,
                         "type": "anitya",
                         "project-id": 17734,
                         "stable-only": true,
@@ -294,6 +299,7 @@
                     "url": "https://github.com/aqbanking/aqbanking/archive/refs/tags/6.8.3.tar.gz",
                     "sha256": "683e3685f159a715a41aa275ceab1b3c6a33f4456aeebbe80856dad845a2f9c5",
                     "x-checker-data": {
+                        "is-important": true,
                         "type": "anitya",
                         "project-id": 6890,
                         "stable-only": true,
@@ -349,6 +355,7 @@
                             "url": "https://github.com/aqbanking/gwenhywfar/archive/refs/tags/5.14.1.tar.gz",
                             "sha256": "d52937b56e0760d11dc200ad5fb2cfd9d8bf147d0b1b97451f23f31c6ee641a2",
                             "x-checker-data": {
+                                "is-important": true,
                                 "type": "anitya",
                                 "project-id": 6891,
                                 "stable-only": true,
@@ -429,6 +436,7 @@
                     "commit": "49062eb5ff54e8eddf4840969066178fe666c379",
                     "tag": "5.1.6",
                     "x-checker-data": {
+                        "is-important": true,
                         "type": "git"
                     }
                 },
@@ -495,6 +503,7 @@
                     "url": "https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v4.6.1.tar.gz",
                     "sha256": "d8f9afcbc2f4b55e316ca4ada4425daf3d0b4aab25f45e11a802ae422b9f53a3",
                     "x-checker-data": {
+                        "is-important": true,
                         "type": "anitya",
                         "project-id": 11213,
                         "stable-only": true,
@@ -554,6 +563,7 @@
                     "url": "https://download.kde.org/stable/kmymoney/5.2.1/kmymoney-5.2.1.tar.xz",
                     "sha256": "feadf40b6d4c90d77e32716a858dd23769081863104d8cea62910b1ec3e4336b",
                     "x-checker-data": {
+                        "is-main-source": true,
                         "type": "anitya",
                         "project-id": 8917,
                         "stable-only": true,
