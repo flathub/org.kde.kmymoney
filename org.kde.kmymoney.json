@@ -296,8 +296,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/aqbanking/aqbanking/archive/refs/tags/6.8.3.tar.gz",
-                    "sha256": "683e3685f159a715a41aa275ceab1b3c6a33f4456aeebbe80856dad845a2f9c5",
+                    "url": "https://github.com/aqbanking/aqbanking/archive/refs/tags/6.8.4.tar.gz",
+                    "sha256": "9a1b9313ba68c7dc9086342ecf5b206e2a6b48a8ae2e1510b07c345b06f26f43",
                     "x-checker-data": {
                         "is-important": true,
                         "type": "anitya",
