@@ -295,15 +295,13 @@
             "name": "aqbanking",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/aqbanking/aqbanking/archive/refs/tags/6.8.4.tar.gz",
-                    "sha256": "9a1b9313ba68c7dc9086342ecf5b206e2a6b48a8ae2e1510b07c345b06f26f43",
+                    "type": "git",
+                    "url": "https://git.aquamaniac.de/git/aqbanking",
+                    "commit": "a70a96589cff4b32364e1e856d0e735170312000",
+                    "tag": "6.8.4",
                     "x-checker-data": {
                         "is-important": true,
-                        "type": "anitya",
-                        "project-id": 6890,
-                        "stable-only": true,
-                        "url-template": "https://github.com/aqbanking/aqbanking/archive/refs/tags/$version.tar.gz"
+                        "type": "git"
                     }
                 },
                 {
@@ -351,15 +349,13 @@
                     },
                     "sources": [
                         {
-                            "type": "archive",
-                            "url": "https://github.com/aqbanking/gwenhywfar/archive/refs/tags/5.14.1.tar.gz",
-                            "sha256": "d52937b56e0760d11dc200ad5fb2cfd9d8bf147d0b1b97451f23f31c6ee641a2",
+                            "type": "git",
+                            "url": "https://git.aquamaniac.de/git/gwenhywfar",
+                            "commit": "424949d0c6e61028eaccd6e46e4c0c41931c2b2f",
+                            "tag": "5.14.1",
                             "x-checker-data": {
                                 "is-important": true,
-                                "type": "anitya",
-                                "project-id": 6891,
-                                "stable-only": true,
-                                "url-template": "https://github.com/aqbanking/gwenhywfar/archive/refs/tags/$version.tar.gz"
+                                "type": "git"
                             }
                         },
                         {
