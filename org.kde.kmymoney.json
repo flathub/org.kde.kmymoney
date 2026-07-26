@@ -199,9 +199,9 @@
                             ],
                             "sources": [
                                 {
-                                    "sha256": "64f11d3b95a24e2a8d4166ecff518730f79ecc27222ef41faf7c7e0340fc9329",
+                                    "sha256": "5a026e5602085307c7dcb72b71b07261c40f80914277bef5f8d7f2ecab739bec",
                                     "type": "archive",
-                                    "url": "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.8.tar.xz",
+                                    "url": "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.9.tar.xz",
                                     "x-checker-data": {
                                         "type": "gnome",
                                         "name": "glibmm",
@@ -301,8 +301,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.11.tar.gz",
-                            "sha256": "53675e98fa83b48201d24f7bfbcaeaa1b51496b8b19ff969785856bdeb196af3",
+                            "url": "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.12.tar.gz",
+                            "sha256": "24045199af12d93fe5fdbbbf7e386e823e4842071e9432e2b90ac108b889a923",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 5200,
@@ -386,8 +386,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://pcsclite.apdu.fr/files/pcsc-lite-2.4.1.tar.xz",
-                            "sha256": "afd3ba68c8000d2be048dc292df99a9812df9ad2efaf0a366eea22ac1faa19a7",
+                            "url": "https://pcsclite.apdu.fr/files/pcsc-lite-2.5.1.tar.xz",
+                            "sha256": "bfcfe38a20afc49849c6bf55325e38f449fc4b26d3923fdc32b969ae41a8741b",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 2611,
