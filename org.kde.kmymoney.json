@@ -96,9 +96,9 @@
                     "sha256": "f921410e180e0a5811e1ee2926954920c6576a72b3b65f53791faa6c85fcb689",
                     "x-checker-data": {
                         "is-important": true,
-                        "type": "anitya",
-                        "project-id": 378759,
-                        "stable-only": true,
+                        "type": "html",
+                        "url": "https://download.kde.org/stable/alkimia/",
+                        "version-pattern": "href=\"([0-9]+\\.[0-9]+\\.[0-9]+)/\"",
                         "url-template": "https://download.kde.org/stable/alkimia/$version/alkimia-$version.tar.xz"
                     }
                 }
