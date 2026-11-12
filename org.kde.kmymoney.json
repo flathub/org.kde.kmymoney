@@ -296,6 +296,7 @@
                 {
                     "name": "xmlsec",
                     "config-opts": [
+                        "--enable-hardening=no",
                         "--disable-static"
                     ],
                     "sources": [
